@@ -1,0 +1,19 @@
+<form action="">
+    <label for="paises">Paises
+      <select (change)="loadPaisesBySigla($event)" name="paises" id="paises">
+        <option value="">CONSULTAR</option>
+        <option value="SC">BR</option>
+
+      </select>
+    </label>
+    <br>
+
+
+<label for="paises">Paises
+    <select (change)="loadPaisesBySigla($event)" name="paises" id="paises">
+      <option *ngFor="let paises of paises$ | async" value="paises">{{paises.nome}} </option>
+    </select>
+</label>
+
+
+</form>

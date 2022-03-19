@@ -5,7 +5,8 @@ import { ContentDetalhesComponent } from './components/content-detalhes/content-
 import { ContentComponent } from './components/content/content.component';
 
 const routes: Routes = [
-  {path: 'paises', component: ContentDetalhesComponent},
+  {path: 'paises', component: ContentComponent},
+  {path: 'detalhes', component: ContentDetalhesComponent},
   {path: '', redirectTo: '/paises', pathMatch: 'full'}
 ];
 

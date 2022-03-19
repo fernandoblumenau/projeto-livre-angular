@@ -3,7 +3,7 @@ export class Paises {
     id?:Id;
     nome?: Nome;
     area?: Area;
-    linguas?:Lingua;
+    linguas?:Linguas;
     unidadesMonetarias?:UnidadeMonetaria;
     historico?:string;
 
@@ -42,14 +42,14 @@ export class Unidade{
 
 export class UnidadeMonetaria{
     nome?: string;
-    constructor(obj: Partial<Lingua>){
+    constructor(obj: Partial<Linguas>){
         Object.assign(this, obj);
     }
 }
 
-export class Lingua{
+export class Linguas{
     nome?: string;
-    constructor(obj: Partial<Lingua>){
+    constructor(obj: Partial<Linguas>){
         Object.assign(this, obj);
     }
 }
@@ -59,7 +59,7 @@ export class Nome{
     abreviado?: string;
     abreviado_EN?: string;
     abreviado_ES?: string;
-   
+
     constructor(obj: Partial<Nome>){
      Object.assign(this, obj);
     }

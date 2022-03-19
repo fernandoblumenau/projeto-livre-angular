@@ -15,19 +15,18 @@ export class ContentComponent implements OnInit {
   constructor(private ibgeService: ApiIbgePaisesService) { }
 
   ngOnInit(): void {
+  this.loadPaises();
   }
 
-  loadPaises(event: any) {
-    const paises = (event.target as HTMLSelectElement)?.value;
-    if(paises){
+  loadPaises(){
       this.paises$ = this.ibgeService.getPaises();
-      this.ibgeService
-          .getPaises()
-          .subscribe(
-           (response) => {
-             console.log(response);
-           }
-         );
-    }
+      // this.ibgeService
+      //     .getPaises()
+      //     .subscribe(
+      //      (response) => {
+      //        console.log(response);
+      //      }
+      //    );
+
   }
 }

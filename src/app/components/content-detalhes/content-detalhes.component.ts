@@ -14,6 +14,7 @@ export class ContentDetalhesComponent implements OnInit {
   constructor(private ibgeService: ApiIbgePaisesService) { }
 
   ngOnInit(): void {
+
   }
 
   paises$ = new Observable<Paises[]>();

@@ -2,18 +2,27 @@
     <label for="paises">Paises
       <select (change)="loadPaisesBySigla($event)" name="paises" id="paises">
         <option value="">CONSULTAR</option>
-        <option value="SC">BR</option>
+        <option value="BR">BR</option>
+        <option value="AG">AG</option>
+        <option value="AD">AD</option>
+        <option value="AE">AE</option>
 
       </select>
     </label>
     <br>
 
+    <div class="container my-4">
+      <div class="col">
 
-<label for="paises">Paises
-    <select (change)="loadPaisesBySigla($event)" name="paises" id="paises">
-      <option *ngFor="let paises of paises$ | async" value="paises">{{paises.nome}} </option>
-    </select>
-</label>
 
+      <h1 *ngFor="let paises of paises$ | async" value="paises">{{paises.nome?.abreviado}} </h1>
+      <h1 *ngFor="let paises of paises$ | async" value="paises">{{paises.linguas?.nome}} </h1>
+      <h1 *ngFor="let paises of paises$ | async" value="paises">{{paises.area?.total}} Km²</h1>
+      <h1 *ngFor="let paises of paises$ | async" value="paises">{{paises.unidadesMonetarias?.nome}} </h1>
+      <p *ngFor="let paises of paises$ | async" value="paises">{{paises.historico}} </p>
+
+
+    </div>
+  </div>
 
 </form>

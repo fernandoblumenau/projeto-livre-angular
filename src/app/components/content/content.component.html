@@ -1,18 +1,33 @@
+
+
+<app-header></app-header>
+<br>
+<br>
+
 <form action="">
     <label for="paises">Paises
-      <select (change)="loadPaises($event)" name="paises" id="paises">
-        <option value="">CONSULTAR</option>
-        <option value="SC">BR</option>
-
+      <select name="paises" id="paises">
+        <option value="">TODOS</option>
+        <option *ngFor="let paises of paises$ | async" value="">{{paises.nome?.abreviado}} </option>
       </select>
     </label>
     <br>
-
-
-
-<label for="paises">Paises
-    <select (change)="loadPaises($event)" name="paises" id="paises">
-      <option *ngFor="let paises of paises$ | async" value="">{{paises.nome}} </option>
-    </select>
-</label>
 </form>
+
+<Br>
+<br>
+
+<div class="row">
+  <div *ngFor="let paises of paises$ | async; index as i" class="col-lg-4 mb-2">
+    <div class="card" style="width: 18rem;">
+      <img src="" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{paises.nome?.abreviado| uppercase}}</h5>
+        <a routerLink="/detalhes/{{paises.id?.ISO_3166_1_ALPHA_2}}" class="btn btn-primary">Detalhes</a>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
